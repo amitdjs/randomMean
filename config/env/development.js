@@ -1,7 +1,7 @@
 'use strict';
 
 var defaultEnvConfig = require('./default');
-process.env.MONGOLAB_URI = "mongodb://arachnoMaster:arachnos1@ds021036.mlab.com:21036/heroku_x2gn5jxq";
+
 module.exports = {
   db: {
     uri: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/mean-dev',
