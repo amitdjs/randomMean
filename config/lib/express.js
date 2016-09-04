@@ -10,7 +10,6 @@ var config = require('../config'),
   bodyParser = require('body-parser'),
   session = require('express-session'),
   MongoStore = require('connect-mongo')(session),
-  favicon = require('serve-favicon'),
   compress = require('compression'),
   methodOverride = require('method-override'),
   cookieParser = require('cookie-parser'),
@@ -64,8 +63,6 @@ module.exports.initMiddleware = function (app) {
     level: 9
   }));
 
-  // Initialize favicon middleware
-  app.use(favicon(app.locals.favicon));
 
   // Enable logger (morgan)
   app.use(morgan(logger.getFormat(), logger.getOptions()));
