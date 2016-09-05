@@ -36,8 +36,21 @@
 </head>
 
 <body class="ng-cloak">
+<script>
+    if( navigator.userAgent.match(/Android/i)
+      || navigator.userAgent.match(/webOS/i)
+      || navigator.userAgent.match(/iPhone/i)
+      || navigator.userAgent.match(/iPad/i)
+      || navigator.userAgent.match(/iPod/i)
+      || navigator.userAgent.match(/BlackBerry/i)
+      || navigator.userAgent.match(/Windows Phone/i)
+    ){
+      document.getElementsByName('body').className+= " phone";
+    }
+    console.log(navigator.userAgent);
+</script>
   <header ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
-  <section class="content">
+  <section class="content" ng-class="{'mt0': $root.homePage}">
     <section class="container">
       {% block content %}{% endblock %}
     </section>

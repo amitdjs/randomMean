@@ -1,10 +1,15 @@
 'use strict';
 
-angular.module('core').controller('HomeController', ['$scope', 'Authentication',
+angular.module('core').controller('HomeController', ['$scope', '$rootScope', 'Authentication',
   function ($scope, Authentication) {
     // This provides Authentication context.
     $scope.authentication = Authentication;
-
+    //TODO: think of a way to remove dom manipulation from controller -Amit
+    var p = angular.element(document.getElementById('particles-js')).parent();
+    while(p.length) {
+      p.addClass('h100');
+      p = p.parent();
+    }
     window.particlesJS('particles-js',
       {
         'particles': {

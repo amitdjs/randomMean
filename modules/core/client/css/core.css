@@ -53,6 +53,12 @@ canvas{
 
 .container {
   width: 100%;
+  padding:0;
+}
+
+header .container {
+  padding-left:15px;
+  padding-right:15px;
 }
 
 /* ---- particles.js container ---- */
@@ -68,4 +74,11 @@ canvas{
 header.navbar.navbar-fixed-top.navbar-inverse.ng-scope {
   min-height:0 !important;
   height: 0;
+}
+
+.h100 {
+  height: 100%;
+}
+.mt0 {
+  margin-top:0 !important;
 }
